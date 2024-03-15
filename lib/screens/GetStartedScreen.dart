@@ -1,4 +1,4 @@
-import 'package:fintect_bot/screens/SignUpScreen.dart';
+import 'package:fintect_bot/screens/SignInScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

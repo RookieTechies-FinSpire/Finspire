@@ -1,5 +1,5 @@
 import 'package:fintect_bot/screens/GetStartedScreen.dart';
-import 'package:fintect_bot/screens/SignUpScreen.dart';
+import 'package:fintect_bot/screens/SignInScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

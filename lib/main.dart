@@ -1,4 +1,5 @@
-import 'package:fintect_bot/pages/SignUpPage.dart';
+import 'package:fintect_bot/screens/GetStartedScreen.dart';
+import 'package:fintect_bot/screens/SignUpScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,8 +11,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: SignUpPage(),
+    return MaterialApp(
+      title: GetStartedScreen.id,
+      initialRoute: GetStartedScreen.id,
+      routes: {
+        GetStartedScreen.id: (context) => const GetStartedScreen(),
+        SignInScreen.id: (context) => const SignInScreen(),
+      },
+      home: const GetStartedScreen(),
     );
   }
 }

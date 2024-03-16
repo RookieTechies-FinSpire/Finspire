@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "967345484832",
-    "project_id": "rookietechies-95e53",
-    "storage_bucket": "rookietechies-95e53.appspot.com"
+    "project_number": "453724071260",
+    "project_id": "finwise-bdc0a",
+    "storage_bucket": "finwise-bdc0a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:967345484832:android:98f656dd742171ae4f3845",
+        "mobilesdk_app_id": "1:453724071260:android:3f985c5351ab6987ff8d99",
         "android_client_info": {
           "package_name": "com.example.fintect_bot"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCGkct-Ix3PZZTLpFZN2eEVyFDKqODbAvU"
+          "current_key": "AIzaSyAMBUL-JyTZlcKM0P8uqtnHvwfA1Y0-UD4"
         }
       ],
       "services": {

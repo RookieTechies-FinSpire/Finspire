@@ -44,38 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDsXg7_BYOyD4pwLh99KKGuJNbH4slgMmk',
-    appId: '1:967345484832:web:9db4a10f6a9164d14f3845',
-    messagingSenderId: '967345484832',
-    projectId: 'rookietechies-95e53',
-    authDomain: 'rookietechies-95e53.firebaseapp.com',
-    storageBucket: 'rookietechies-95e53.appspot.com',
-    measurementId: 'G-JPDPGMVBCT',
+    apiKey: 'AIzaSyAMhWZS8bBMDohEgUi7mTINAxHIIgiivvE',
+    appId: '1:453724071260:web:5ee820276911611aff8d99',
+    messagingSenderId: '453724071260',
+    projectId: 'finwise-bdc0a',
+    authDomain: 'finwise-bdc0a.firebaseapp.com',
+    storageBucket: 'finwise-bdc0a.appspot.com',
+    measurementId: 'G-PTFL1T7FQF',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCGkct-Ix3PZZTLpFZN2eEVyFDKqODbAvU',
-    appId: '1:967345484832:android:98f656dd742171ae4f3845',
-    messagingSenderId: '967345484832',
-    projectId: 'rookietechies-95e53',
-    storageBucket: 'rookietechies-95e53.appspot.com',
+    apiKey: 'AIzaSyAMBUL-JyTZlcKM0P8uqtnHvwfA1Y0-UD4',
+    appId: '1:453724071260:android:3f985c5351ab6987ff8d99',
+    messagingSenderId: '453724071260',
+    projectId: 'finwise-bdc0a',
+    storageBucket: 'finwise-bdc0a.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDj1MStWSvJgyaKX_qLQkqvdO4rhWs8Ugc',
-    appId: '1:967345484832:ios:ae776bcfca4282d04f3845',
-    messagingSenderId: '967345484832',
-    projectId: 'rookietechies-95e53',
-    storageBucket: 'rookietechies-95e53.appspot.com',
+    apiKey: 'AIzaSyAiXj-J5IIrh0lvwfZIqYuAQWPul6no7co',
+    appId: '1:453724071260:ios:caeb591b0973bb5cff8d99',
+    messagingSenderId: '453724071260',
+    projectId: 'finwise-bdc0a',
+    storageBucket: 'finwise-bdc0a.appspot.com',
     iosBundleId: 'com.example.fintectBot',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDj1MStWSvJgyaKX_qLQkqvdO4rhWs8Ugc',
-    appId: '1:967345484832:ios:a70c7604b10c8fc54f3845',
-    messagingSenderId: '967345484832',
-    projectId: 'rookietechies-95e53',
-    storageBucket: 'rookietechies-95e53.appspot.com',
+    apiKey: 'AIzaSyAiXj-J5IIrh0lvwfZIqYuAQWPul6no7co',
+    appId: '1:453724071260:ios:682d87b66392eeb3ff8d99',
+    messagingSenderId: '453724071260',
+    projectId: 'finwise-bdc0a',
+    storageBucket: 'finwise-bdc0a.appspot.com',
     iosBundleId: 'com.example.fintectBot.RunnerTests',
   );
 }

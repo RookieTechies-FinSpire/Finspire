@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "967345484832",
+    "project_id": "rookietechies-95e53",
+    "storage_bucket": "rookietechies-95e53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967345484832:android:98f656dd742171ae4f3845",
+        "android_client_info": {
+          "package_name": "com.example.fintect_bot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGkct-Ix3PZZTLpFZN2eEVyFDKqODbAvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,9 +1,22 @@
+import 'package:fintect_bot/screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   static String id = "SignInScreen";
   const SignInScreen({super.key});
 
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+String username = '';
+String passwd = '';
+bool isPasswordVisible = true;
+
+TextEditingController usernameController = TextEditingController();
+TextEditingController passwordController = TextEditingController();
+
+class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -14,7 +27,7 @@ class SignInScreen extends StatelessWidget {
           alignment: Alignment.center,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/images/SignUpScreenBackground.png"),
+                image: AssetImage("assets/images/SignInScreenBackground.png"),
                 fit: BoxFit.fill),
           ),
           child: Column(
@@ -46,6 +59,8 @@ class SignInScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 64.0, right: 64.0),
                 child: TextField(
+                  style: const TextStyle(color: Colors.white),
+                  controller: usernameController,
                   decoration: InputDecoration(
                     prefixIcon: const Icon(
                       Icons.person,
@@ -80,18 +95,33 @@ class SignInScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 64.0, right: 64.0),
                 child: TextField(
+                  controller: passwordController,
+                  obscureText: isPasswordVisible,
+                  style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
+                    focusColor: Colors.white,
                     prefixIcon: const Icon(
                       Icons.password,
                       color: Color(0xffA4A4A4),
                     ),
-                    suffixIcon: const Icon(
-                      Icons.visibility,
-                      color: Color(0xffA4A4A4),
+                    suffixIcon: IconButton(
+                      icon: Icon(isPasswordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                      color: const Color(0xffA4A4A4),
+                      onPressed: () {
+                        setState(() {
+                          if (isPasswordVisible) {
+                            isPasswordVisible = false;
+                          } else {
+                            isPasswordVisible = true;
+                          }
+                        });
+                      },
                     ),
                     filled: true,
                     fillColor: Colors.white.withOpacity(0.2),
-                    hintText: "Username",
+                    hintText: "Password",
                     hintStyle: const TextStyle(
                       color: Color(0xffA4A4A4),
                     ),
@@ -104,7 +134,21 @@ class SignInScreen extends StatelessWidget {
                 height: 20,
               ),
               ElevatedButton(
-                onPressed: () => print("Hello"),
+                onPressed: () {
+                  setState(() {
+                    username = usernameController.text;
+                    passwd = passwordController.text;
+
+                    if (username.trim().toLowerCase() == "admin" &&
+                        passwd.trim().toLowerCase() == "admin") {
+                      Navigator.pushNamed(context, HomeScreen.id);
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text("Invalid Username or Password :("),
+                      ));
+                    }
+                  });
+                },
                 style: ButtonStyle(
                   shape: MaterialStateProperty.resolveWith((states) =>
                       RoundedRectangleBorder(
@@ -113,7 +157,10 @@ class SignInScreen extends StatelessWidget {
                     const Color(0xff812DE2),
                   ),
                 ),
-                child: const Text("Sign In"),
+                child: const Text(
+                  "Sign In",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
               const Row(children: <Widget>[
                 Expanded(
@@ -145,7 +192,10 @@ class SignInScreen extends StatelessWidget {
                   width: 24,
                   height: 24,
                 ),
-                label: const Text("Sign In with Google"),
+                label: const Text(
+                  "Sign In with Google",
+                  style: TextStyle(color: Colors.white),
+                ),
                 style: ButtonStyle(
                   shape: MaterialStateProperty.resolveWith((states) =>
                       RoundedRectangleBorder(
@@ -156,7 +206,7 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 85,
+                height: 50,
               )
             ],
           ),

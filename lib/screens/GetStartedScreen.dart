@@ -36,7 +36,7 @@ class GetStartedScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 10,
               ),
               Container(
                 margin: const EdgeInsets.only(left: 20.0, right: 20.0),
@@ -51,7 +51,10 @@ class GetStartedScreen extends StatelessWidget {
                       const Color(0xff812DE2),
                     ),
                   ),
-                  child: const Text("Try Now"),
+                  child: const Text(
+                    "Try Now",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
               const SizedBox(

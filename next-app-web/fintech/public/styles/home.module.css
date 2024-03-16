@@ -4,10 +4,23 @@
     color: white;
     display: flex;
     width: 100vw;
-    position: absolute;
     top: 0;
     height: 80px;
     z-index: 1000;
+    position: fixed;
+    top: 0;
+}
+
+.navbaractive {
+    background-color: white;
+    color: black;
+    display: flex;
+    width: 100vw;
+    top: 0;
+    height: 80px;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
 }
 
 .navbar_content {
@@ -43,6 +56,18 @@
 
 .burgeractive>span:nth-child(3) {
     transform: rotate(-45deg) translateX(15px);
+}
+
+.navbar_menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.signin_btn {
+    border: 1px solid white;
+    padding: 8px 16px;
+    border-radius: 20px;
 }
 
 /* Hero */

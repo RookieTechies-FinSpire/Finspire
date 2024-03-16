@@ -10,15 +10,15 @@ export default function SocialLoginButton({ data, func }) {
                 <span className="text-black !text-[12px]">{data} with Google</span>
             </div>
             {/* <div className="h-[50px] rounded-full bg-white flex justify-between items-center p-4 gap-2 w-[50px] hover:w-auto [&>span]:hidden [&>span]:hover:flex cursor-pointer" onClick={func[1]}> */}
-            <div className="h-[50px] rounded-full bg-white flex justify-between items-center p-4 gap-2 w-[50px] hover:w-auto [&>span]:hidden [&>span]:hover:flex cursor-pointer">
+            {/* <div className="h-[50px] rounded-full bg-white flex justify-between items-center p-4 gap-2 w-[50px] hover:w-auto [&>span]:hidden [&>span]:hover:flex cursor-pointer">
                 <FaApple className="text-black text-2xl" />
                 <span className="text-black !text-[12px]">{data} with Apple</span>
-            </div>
+            </div> */}
             {/* <div className="h-[50px] rounded-full bg-white flex justify-between items-center p-4 gap-2 w-[50px] hover:w-auto [&>span]:hidden [&>span]:hover:flex cursor-pointer" onClick={func[2]}> */}
-            <div className="h-[50px] rounded-full bg-white flex justify-between items-center p-4 gap-2 w-[50px] hover:w-auto [&>span]:hidden [&>span]:hover:flex cursor-pointer">
+            {/* <div className="h-[50px] rounded-full bg-white flex justify-between items-center p-4 gap-2 w-[50px] hover:w-auto [&>span]:hidden [&>span]:hover:flex cursor-pointer">
                 <FaFacebookF className="text-2xl text-[#3D4DA6]" />
                 <span className="text-black !text-[12px]">{data} with Facebook</span>
-            </div>
+            </div> */}
 
         </div>
     )

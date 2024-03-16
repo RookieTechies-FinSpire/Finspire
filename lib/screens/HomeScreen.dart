@@ -1,7 +1,7 @@
-import 'package:fintect_bot/widgets/chatBotWidget.dart';
-import 'package:fintect_bot/widgets/dashboard.dart';
-import 'package:fintect_bot/widgets/feedWidget.dart';
-import 'package:fintect_bot/widgets/homeScreenWidget.dart';
+import 'package:Finspire/widgets/chatBotWidget.dart';
+import 'package:Finspire/widgets/dashboard.dart';
+import 'package:Finspire/widgets/feedWidget.dart';
+import 'package:Finspire/widgets/homeScreenWidget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

@@ -1,23 +1,17 @@
-import 'package:Finspire/screens/HomeScreen.dart';
-import 'package:Finspire/services/authService.dart';
 import 'package:flutter/material.dart';
 
-class SignInScreen extends StatefulWidget {
-  static String id = "SignInScreen";
-  const SignInScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-String username = '';
-String passwd = '';
-bool isPasswordVisible = true;
-
-TextEditingController usernameController = TextEditingController();
-TextEditingController passwordController = TextEditingController();
-
-class _SignInScreenState extends State<SignInScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwdController = TextEditingController();
+  TextEditingController usernameController = TextEditingController();
+  bool isPasswordVisible = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,7 +22,7 @@ class _SignInScreenState extends State<SignInScreen> {
           alignment: Alignment.center,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/images/SignInScreenBackground.png"),
+                image: AssetImage("assets/images/SignUpScreenBackground.png"),
                 fit: BoxFit.fill),
           ),
           child: Column(
@@ -96,7 +90,7 @@ class _SignInScreenState extends State<SignInScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 64.0, right: 64.0),
                 child: TextField(
-                  controller: passwordController,
+                  controller: passwdController,
                   obscureText: isPasswordVisible,
                   style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
@@ -135,7 +129,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 height: 20,
               ),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () => print(
+                    "Button pressed") /*() {
                   setState(() {
                     username = usernameController.text;
                     passwd = passwordController.text;
@@ -149,7 +144,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       ));
                     }
                   });
-                },
+                }*/
+                ,
                 style: ButtonStyle(
                   shape: MaterialStateProperty.resolveWith((states) =>
                       RoundedRectangleBorder(
@@ -186,8 +182,8 @@ class _SignInScreenState extends State<SignInScreen> {
               ]),
               ElevatedButton.icon(
                 onPressed: () {
-                  authService().signInWithGoogle();
-                  Navigator.pushNamed(context, HomeScreen.id);
+                  //authService().signInWithGoogle();
+                  print("Button Pressed");
                 },
                 icon: Image.asset(
                   "assets/images/google.png",

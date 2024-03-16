@@ -1,6 +1,6 @@
-import 'package:fintect_bot/screens/GetStartedScreen.dart';
-import 'package:fintect_bot/screens/HomeScreen.dart';
-import 'package:fintect_bot/screens/SignInScreen.dart';
+import 'package:Finspire/screens/GetStartedScreen.dart';
+import 'package:Finspire/screens/HomeScreen.dart';
+import 'package:Finspire/screens/SignInScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';

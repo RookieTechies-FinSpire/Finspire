@@ -12,7 +12,20 @@
           "package_name": "com.example.fintect_bot"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "453724071260-midq4kec2p2jrb1lvovp1orh72q1n90c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fintect_bot",
+            "certificate_hash": "e4057c635f06bfbd47fc853f2c5e76ac4798cb95"
+          }
+        },
+        {
+          "client_id": "453724071260-avgjoc75j2dqp95ibh82akre10rn63nd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAMBUL-JyTZlcKM0P8uqtnHvwfA1Y0-UD4"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "453724071260-avgjoc75j2dqp95ibh82akre10rn63nd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "453724071260-3b6amluatcgkn64rvrrilp0eknoa3pvr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fintectBot"
+              }
+            }
+          ]
         }
       }
     }

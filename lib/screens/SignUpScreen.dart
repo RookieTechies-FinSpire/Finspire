@@ -1,17 +1,21 @@
+import 'package:Finspire/screens/HomeScreen.dart';
+import 'package:Finspire/services/authService.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
+  static String id = "SignUpScreen";
   const SignUpScreen({super.key});
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
+TextEditingController emailController = TextEditingController();
+TextEditingController passwdController = TextEditingController();
+TextEditingController usernameController = TextEditingController();
+
 class _SignUpScreenState extends State<SignUpScreen> {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwdController = TextEditingController();
-  TextEditingController usernameController = TextEditingController();
-  bool isPasswordVisible = false;
+  bool isPasswordVisible = true;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -29,7 +33,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               const Text(
-                "Welcome Back!",
+                "Get Started",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Color(0xffEFEFEF),
@@ -38,11 +42,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               const Padding(
                 padding: EdgeInsets.only(
-                    left: 64.0, right: 64.0, top: 24.0, bottom: 12.0),
+                    left: 64.0, right: 64.0, top: 0.0, bottom: 12.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "Username",
+                    "Name",
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       fontSize: 15,
@@ -63,7 +67,43 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     filled: true,
                     fillColor: Colors.white.withOpacity(0.2),
-                    hintText: "Username",
+                    hintText: "Your Name",
+                    hintStyle: const TextStyle(
+                      color: Color(0xffA4A4A4),
+                    ),
+                    border: const OutlineInputBorder(),
+                  ),
+                  cursorColor: Colors.white,
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(
+                    left: 64.0, right: 64.0, top: 24.0, bottom: 12.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Email",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Color(0xffA4A4A4),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 64.0, right: 64.0),
+                child: TextField(
+                  style: const TextStyle(color: Colors.white),
+                  controller: emailController,
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(
+                      Icons.person,
+                      color: Color(0xffA4A4A4),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.2),
+                    hintText: "Email Address",
                     hintStyle: const TextStyle(
                       color: Color(0xffA4A4A4),
                     ),
@@ -129,23 +169,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 20,
               ),
               ElevatedButton(
-                onPressed: () => print(
-                    "Button pressed") /*() {
-                  setState(() {
-                    username = usernameController.text;
-                    passwd = passwordController.text;
-
-                    if (username.trim().toLowerCase() == "admin" &&
-                        passwd.trim().toLowerCase() == "admin") {
-                      Navigator.pushNamed(context, HomeScreen.id);
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text("Invalid Username or Password :("),
-                      ));
-                    }
-                  });
-                }*/
-                ,
+                onPressed: () {
+                  authService().signUpWithEmailPasswd(emailController.text,
+                      passwdController.text, usernameController.text);
+                  Navigator.pushNamed(context, HomeScreen.id);
+                },
                 style: ButtonStyle(
                   shape: MaterialStateProperty.resolveWith((states) =>
                       RoundedRectangleBorder(
@@ -155,14 +183,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 child: const Text(
-                  "Sign In",
+                  "Sign Up",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
               const Row(children: <Widget>[
                 Expanded(
                   child: Divider(
-                    height: 100,
+                    height: 50,
                     indent: 100,
                     color: Color(0xffB6B6B6),
                   ),
@@ -182,8 +210,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ]),
               ElevatedButton.icon(
                 onPressed: () {
-                  //authService().signInWithGoogle();
-                  print("Button Pressed");
+                  authService().signInWithGoogle();
+                  Navigator.pushNamed(context, HomeScreen.id);
                 },
                 icon: Image.asset(
                   "assets/images/google.png",
@@ -191,7 +219,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 24,
                 ),
                 label: const Text(
-                  "Sign In with Google",
+                  "Sign Up with Google",
                   style: TextStyle(color: Colors.white),
                 ),
                 style: ButtonStyle(
@@ -204,7 +232,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 30,
               )
             ],
           ),

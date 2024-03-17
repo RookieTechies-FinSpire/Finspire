@@ -1,6 +1,8 @@
 import 'package:Finspire/screens/HomeScreen.dart';
+import 'package:Finspire/screens/SignUpScreen.dart';
 import 'package:Finspire/services/authService.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class SignInScreen extends StatefulWidget {
   static String id = "SignInScreen";
@@ -140,14 +142,9 @@ class _SignInScreenState extends State<SignInScreen> {
                     username = usernameController.text;
                     passwd = passwordController.text;
 
-                    if (username.trim().toLowerCase() == "admin" &&
-                        passwd.trim().toLowerCase() == "admin") {
-                      Navigator.pushNamed(context, HomeScreen.id);
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text("Invalid Username or Password :("),
-                      ));
-                    }
+                    authService()
+                        .logInWithEmailPasswd(username, passwd, context);
+                    Navigator.pushNamed(context, HomeScreen.id);
                   });
                 },
                 style: ButtonStyle(
@@ -166,7 +163,7 @@ class _SignInScreenState extends State<SignInScreen> {
               const Row(children: <Widget>[
                 Expanded(
                   child: Divider(
-                    height: 100,
+                    height: 50,
                     indent: 100,
                     color: Color(0xffB6B6B6),
                   ),
@@ -208,7 +205,32 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text(
+                    "No Account?",
+                    style: TextStyle(
+                      color: Color(0xffB6B6B6),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, SignUpScreen.id);
+                    },
+                    child: const Text(
+                      " Sign Up",
+                      style: TextStyle(
+                        color: Color(0xff9130F4),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 60,
               )
             ],
           ),

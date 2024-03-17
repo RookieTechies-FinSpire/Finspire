@@ -7,13 +7,16 @@ environment:
   sdk: '>=3.0.6 <4.0.0'
 
 dependencies:
+  cloud_firestore: ^4.15.9
   firebase_auth: ^4.17.9
-  firebase_core: ^2.24.2
+  firebase_core: ^2.27.1
+  firebase_storage: ^11.6.10
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.10+1
   google_sign_in: ^6.2.1
   http: ^1.2.1
+  push_restapi_dart: ^0.3.1-alpha
   shared_preferences: ^2.2.2
 
 dev_dependencies:

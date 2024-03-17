@@ -1,6 +1,7 @@
 import 'package:Finspire/screens/GetStartedScreen.dart';
 import 'package:Finspire/screens/HomeScreen.dart';
 import 'package:Finspire/screens/SignInScreen.dart';
+import 'package:Finspire/screens/SignUpScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -25,6 +26,7 @@ class MainApp extends StatelessWidget {
         GetStartedScreen.id: (context) => const GetStartedScreen(),
         SignInScreen.id: (context) => const SignInScreen(),
         HomeScreen.id: (context) => const HomeScreen(),
+        SignUpScreen.id: (context) => const SignUpScreen(),
       },
       home: const GetStartedScreen(),
     );

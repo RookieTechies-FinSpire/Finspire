@@ -1,7 +1,9 @@
+import 'package:Finspire/services/authService.dart';
 import 'package:Finspire/widgets/chatBotWidget.dart';
 import 'package:Finspire/widgets/dashboard.dart';
 import 'package:Finspire/widgets/feedWidget.dart';
 import 'package:Finspire/widgets/homeScreenWidget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,19 +16,23 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedState = 0;
+  User? user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Tanmay Gujju",
+          "Welcome, User",
           style: TextStyle(color: Colors.white),
         ),
         actions: <Widget>[
           IconButton(
             onPressed: () {
-              Navigator.of(context).pop();
+              authService().signUserOut();
+              if (FirebaseAuth.instance.currentUser == null) {
+                Navigator.of(context).pop();
+              }
             },
             icon: const Icon(Icons.logout),
           ),

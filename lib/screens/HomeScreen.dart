@@ -1,8 +1,6 @@
 import 'package:Finspire/services/authService.dart';
-import 'package:Finspire/widgets/chatBotWidget.dart';
 import 'package:Finspire/widgets/dashboard.dart';
 import 'package:Finspire/widgets/feedWidget.dart';
-import 'package:Finspire/widgets/homeScreenWidget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -67,17 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
           destinations: const <Widget>[
             NavigationDestination(
               selectedIcon: Icon(
-                Icons.home,
-                color: Colors.white,
-              ),
-              icon: Icon(
-                Icons.home,
-                color: Color(0xff121139),
-              ),
-              label: "Home",
-            ),
-            NavigationDestination(
-              selectedIcon: Icon(
                 Icons.graphic_eq,
                 color: Colors.white,
               ),
@@ -98,17 +85,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               label: "Feed",
             ),
-            NavigationDestination(
-              selectedIcon: Icon(
-                Icons.message,
-                color: Colors.white,
-              ),
-              icon: Icon(
-                Icons.message,
-                color: Color(0xff121139),
-              ),
-              label: "ChatBot",
-            ),
           ],
         ),
       ),
@@ -122,13 +98,8 @@ class _HomeScreenState extends State<HomeScreen> {
             fit: BoxFit.fill,
           ),
         ),
-        child: selectedState == 0
-            ? const homeScreenWidget()
-            : selectedState == 1
-                ? const dashboardWidget()
-                : selectedState == 2
-                    ? const feedWidget()
-                    : const chatBotWidget(),
+        child:
+            selectedState == 0 ? const DashboardWidget() : const FeedScreen(),
       ),
     );
   }

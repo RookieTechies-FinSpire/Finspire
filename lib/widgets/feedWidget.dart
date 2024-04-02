@@ -11,7 +11,7 @@ class FeedScreen extends StatefulWidget {
 
 class _FeedScreenState extends State<FeedScreen> {
   List<News>? newsArticle = [];
-  bool isLoading = true;
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -25,7 +25,7 @@ class _FeedScreenState extends State<FeedScreen> {
 
     if (newsArticle != null) {
       setState(() {
-        isLoading = false;
+        isLoading = true;
       });
     }
   }
